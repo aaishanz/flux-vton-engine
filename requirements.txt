@@ -1,0 +1,7 @@
+runpod==1.7.2
+torch--extra-index-url https://download.pytorch.org/whl/cu121
+diffusers
+transformers
+accelerate
+requests
+pillow
