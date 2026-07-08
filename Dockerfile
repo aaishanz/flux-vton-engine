@@ -10,7 +10,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy our app files into the container
-COPY rp_handler.py .
+COPY handler.py .
 
 # Force the container to boot our script immediately
-CMD ["python", "-u", "rp_handler.py"]
+CMD ["python", "-u", "handler.py"]
