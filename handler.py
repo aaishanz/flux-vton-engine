@@ -1,14 +1,15 @@
 import runpod
+import requests
 
 # Runs once when the worker starts
 print("Status: RunPod worker started successfully.")
 
 # Runs for every request from your website
 def handler(job):
-    try:
-        job_input = job.get("input", {})
-
-        print("Received job:", job_input)
+    return {
+        "status": "success",
+        "requests_version": requests.__version__
+    }
 
         return {
             "status": "success",
