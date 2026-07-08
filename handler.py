@@ -6,14 +6,13 @@ print("Status: RunPod worker started successfully.")
 
 # Runs for every request from your website
 def handler(job):
-    return {
-        "status": "success",
-        "requests_version": requests.__version__
-    }
-
+    try:
+        job_input = job.get("input", {})
+        
         return {
             "status": "success",
             "message": "RunPod connection successful!",
+            "requests_version": requests.__version__,
             "received_input": job_input
         }
 
