@@ -1,26 +1,23 @@
 import runpod
 import requests
+from PIL import Image # Adding Pillow support
 
-# Runs once when the worker starts
-print("Status: RunPod worker started successfully.")
+print("Status: RunPod worker started with Pillow support.")
 
-# Runs for every request from your website
 def handler(job):
     try:
         job_input = job.get("input", {})
-        
+
         return {
             "status": "success",
-            "message": "RunPod connection successful!",
-            "requests_version": requests.__version__,
+            "message": "Pillow loaded successfully!",
+            "pillow_version": Image.__version__, # Verifies Pillow is working
             "received_input": job_input
         }
-
     except Exception as e:
         return {
             "status": "error",
             "message": str(e)
         }
 
-# Start the RunPod serverless worker
 runpod.serverless.start({"handler": handler})
