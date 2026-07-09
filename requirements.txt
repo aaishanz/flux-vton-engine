@@ -1,3 +1,4 @@
 runpod==1.7.2
 requests
 Pillow
+torch==2.2.2
