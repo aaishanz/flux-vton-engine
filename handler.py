@@ -2,15 +2,15 @@ import runpod
 import torch
 from PIL import Image
 
-print("=== TORCH TEST VERSION RUNNING ===")
+print("=== TORCH TEST VERSION LOADED ===")
 
 def handler(job):
     return {
         "status": "success",
-        "message": "TORCH TEST PASSED",
+        "message": "Torch test completed",
         "torch_version": torch.__version__,
         "cuda_available": torch.cuda.is_available(),
-        "cuda_devices": torch.cuda.device_count(),
+        "cuda_device_count": torch.cuda.device_count(),
         "pillow_version": Image.__version__
     }
 
